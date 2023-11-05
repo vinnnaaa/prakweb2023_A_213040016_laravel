@@ -109,8 +109,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
-
+    'faker_locale' => env('FAKER_LOCALE','en_US'),
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
