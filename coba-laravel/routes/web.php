@@ -19,8 +19,10 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
+    // return 'Halaman Home';
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        "active" => 'home'
     ]);
     
 });
@@ -28,7 +30,8 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return  view('about', [
         "title" => "About",
-        "nama" => "Revina Bella Trisna",
+        "active" => 'about',
+        "name" => "Revina Bella Trisna",
         "email" => "bellarevina23@gmail.com",
         "image" => "vina.jpeg"
     ]);
@@ -40,6 +43,7 @@ Route::get('posts/{post}', [PostController::class, 'show']);
 Route::get('/categories', function() {
     return view('categories', [
         'title' => 'Post Categories',
+        "active" => 'categories',
         'categories' => Category::all()
     ]);
 });
@@ -55,6 +59,7 @@ Route::get('/categories/{category:slug}', function(Category $category) {
 Route::get('/authors/{author:username}', function (User $author) {
     return view('posts', [
         'title' => "Post by Author: $author->name",
+        "active" => 'categories',
         'posts' => $author->posts->load('category', 'author')
     ]);
 
