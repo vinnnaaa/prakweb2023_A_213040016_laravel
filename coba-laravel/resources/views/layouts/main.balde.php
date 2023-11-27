@@ -10,6 +10,17 @@
 
     {{-- My Style --}}
     <link rel="stylesheet" href="/css/style.css">
+
+    {{--Trix Editor  --}}
+    <link rel="stylesheet" type="text/css" href="/css/trix.css">
+    <script type="text/javascript" src="/js/trix.js"></script>
+
+
+    <style>
+      trix-toolbar [data-trix-button-group="file-tools"] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
 
